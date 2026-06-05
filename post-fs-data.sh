@@ -1,7 +1,7 @@
 #!/system/bin/sh
 # post-fs-data.sh — runs early, before the framework starts.
-# Used to DELETE properties whose mere presence is flagged (Duck Detector marks
-# these with dangerousValues = ["*"], i.e. any value = custom ROM / root).
+# Used to DELETE properties whose mere presence is flagged (any value at all
+# signals a custom ROM or root, so the safest fix is to remove them entirely).
 MODDIR=${0%/*}
 
 # Custom ROM version markers (features/customrom + systemproperties CUSTOM_ROM).
