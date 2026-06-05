@@ -1,0 +1,7 @@
+id=rootfix
+name=Root Fix
+version=v0.1.0
+versionCode=1
+author=juanma0511
+description=System-level property tweaks to reduce common root/Magisk detection signals (build tags, bootloader state, SELinux state, debuggable flags). Pair with Magisk DenyList + Shamiko + Play Integrity Fix for full coverage.
+updateJson=https://raw.githubusercontent.com/juanma0511/rootfix/master/update.json

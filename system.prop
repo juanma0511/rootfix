@@ -1,0 +1,45 @@
+# system.prop — applied by Magisk via resetprop at boot.
+# Values taken 1:1 from Duck Detector's SystemPropertiesCatalog / BootloaderCatalog
+# "expectedSafeValue" fields. Covers categories: systemproperties, bootloader, selinux.
+#
+# IMPORTANT: This only changes what getprop *reports*. Keep the device genuinely
+# SELinux-enforcing and encrypted — these lines fix the reported string, not the
+# actual kernel state, and faking a state you are not in can be caught elsewhere.
+
+# --- SECURITY_CORE ---
+ro.secure=1
+ro.debuggable=0
+ro.adb.secure=1
+service.adb.root=0
+persist.sys.usb.config=mtp
+ro.crypto.state=encrypted
+ro.allow.mock.location=0
+persist.sys.development_settings_enabled=0
+ro.boot.selinux=enforcing
+ro.build.selinux=1
+
+# --- VERIFIED_BOOT / bootloader ---
+ro.boot.verifiedbootstate=green
+ro.boot.flash.locked=1
+ro.boot.veritymode=enforcing
+ro.boot.vbmeta.device_state=locked
+vendor.boot.vbmeta.device_state=locked
+ro.boot.vbmeta.hash_alg=sha256
+ro.boot.vbmeta.invalidate_on_error=yes
+ro.boot.secureboot=1
+sys.oem_unlock_allowed=0
+ro.boot.warranty_bit=0
+ro.warranty_bit=0
+ro.vendor.warranty_bit=0
+ro.boot.knox.state=NORMAL
+
+# --- PARTITION_VERITY (0 = dangerous, 2 = warning, 1 = safe) ---
+partition.system.verified=1
+partition.vendor.verified=1
+partition.product.verified=1
+partition.system_ext.verified=1
+partition.odm.verified=1
+
+# --- BUILD_PROFILE ---
+ro.build.type=user
+ro.build.tags=release-keys

@@ -1,0 +1,22 @@
+# Built module artifacts (CI builds these; don't commit)
+*.zip
+out/
+dist/
+build/
+
+# Signing keys / secrets
+*.keystore
+*.jks
+*.pem
+*.key
+keystore.properties
+local.properties
+*.env
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
