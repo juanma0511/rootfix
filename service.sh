@@ -60,3 +60,14 @@ if prop_has_marker ro.build.display.id; then
   _bid=$(getprop ro.build.id 2>/dev/null)
   [ -n "$_bid" ] && resetprop -n ro.build.display.id "$_bid"
 fi
+
+# --- build-profile: neutralize eng/userdebug flavor ---
+# SystemPropertiesCatalog flags ro.build.flavor when it contains eng/userdebug.
+# Rebuild it as <product.name>-user instead of guessing, and only when it is
+# actually a dev flavor so stock user builds are untouched.
+case "$(getprop ro.build.flavor 2>/dev/null)" in
+  *userdebug*|*eng*|*-eng)
+    _name=$(getprop ro.product.name 2>/dev/null)
+    [ -n "$_name" ] && resetprop -n ro.build.flavor "${_name}-user"
+    ;;
+esac
