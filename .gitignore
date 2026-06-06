@@ -21,7 +21,6 @@ desktop.ini
 .vscode/
 *.swp
 
-# Local tooling / reference material (not part of the module)
-*-Refactoring-master/
+
 
 
