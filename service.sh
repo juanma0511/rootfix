@@ -20,6 +20,15 @@ resetprop -n ro.build.tags release-keys
 resetprop -n ro.boot.warranty_bit 0
 resetprop -n ro.warranty_bit 0
 
+# Verified-boot reporting gaps + vendor mirrors (bootloader / customrom cards).
+resetprop -n ro.oem_unlock_supported 0
+resetprop -n sys.oem_unlock_allowed 0
+resetprop -n vendor.boot.verifiedbootstate green
+resetprop -n vendor.boot.vbmeta.device_state locked
+resetprop -n ro.vendor.boot.warranty_bit 0
+resetprop -n vendor.boot.warranty_bit 0
+resetprop -n ro.vendor.warranty_bit 0
+
 # Re-delete custom-ROM markers.
 for p in ro.modversion ro.cm.version ro.lineage.version ro.crdroid.version \
          ro.pixelexperience.version ro.evolution.version ro.havoc.version \

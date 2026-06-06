@@ -28,10 +28,18 @@ ro.boot.vbmeta.hash_alg=sha256
 ro.boot.vbmeta.invalidate_on_error=yes
 ro.boot.secureboot=1
 sys.oem_unlock_allowed=0
+ro.oem_unlock_supported=0
 ro.boot.warranty_bit=0
 ro.warranty_bit=0
 ro.vendor.warranty_bit=0
+ro.vendor.boot.warranty_bit=0
+vendor.boot.warranty_bit=0
 ro.boot.knox.state=NORMAL
+
+# Vendor mirrors of the verified-boot state — Duck Detector's customrom
+# modification scan cross-checks vendor.boot.* against ro.boot.*, so keep them
+# consistent with the locked/green values asserted above.
+vendor.boot.verifiedbootstate=green
 
 # --- PARTITION_VERITY (0 = dangerous, 2 = warning, 1 = safe) ---
 partition.system.verified=1
